@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        EduPortal - Instructor Dashboard
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+
+<div class="dashboard-shell">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar instructor-sidebar">
+
+        <a
+            class="side-logo"
+            href="index.html"
+        >
+
+            🎓
+
+            <span>
+                EduPortal
+            </span>
+
+        </a>
+
+
+        <div class="profile">
+
+            <div class="avatar">
+                IN
+            </div>
+
+            <div>
+
+                <b id="admin-name">
+                    Instructor
+                </b>
+
+                <small>
+                    Instructor
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="side-nav">
+
+            <button
+                class="side-btn active"
+                data-tab="overview"
+            >
+
+                🏠
+
+                <span>
+                    Dashboard
+                </span>
+
+            </button>
+
+
+            <button
+                class="side-btn"
+                data-tab="create"
+            >
+
+                ➕
+
+                <span>
+                    Course Creator
+                </span>
+
+            </button>
+
+
+            <button
+                class="side-btn"
+                data-tab="manage"
+            >
+
+                📚
+
+                <span>
+                    Manage Courses
+                </span>
+
+            </button>
+
+
+            <button
+                class="side-btn"
+                data-tab="grading"
+            >
+
+                📊
+
+                <span>
+                    Grading Tools
+                </span>
+
+            </button>
+
+        </nav>
+
+
+        <a
+            class="side-home"
+            href="index.html"
+        >
+
+            ← Back to Home
+
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+
+        <!-- HEADER -->
+
+        <header class="dash-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    INSTRUCTOR PORTAL
+                </span>
+
+                <h1 id="admin-title">
+                    Dashboard
+                </h1>
+
+                <p>
+                    Manage your courses and
+                    student submissions.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <button
+                    id="admin-logout"
+                    class="btn btn-small"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- OVERVIEW -->
+
+        <section
+            id="overview"
+            class="dash-section active"
+        >
+
+            <div class="stats">
+
+                <div>
+
+                    <b id="admin-courses">
+                        0
+                    </b>
+
+                    <span>
+                        Total Courses
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <b id="admin-submissions">
+                        0
+                    </b>
+
+                    <span>
+                        Submissions
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <b id="admin-pending">
+                        0
+                    </b>
+
+                    <span>
+                        Pending Grades
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h2>
+                    Instructor Modules
+                </h2>
+
+
+                <div class="feature-grid two">
+
+
+                    <article class="feature-card">
+
+                        <div class="icon">
+                            ➕
+                        </div>
+
+                        <h3>
+                            Create Course
+                        </h3>
+
+                        <p>
+                            Publish a new learning course.
+                        </p>
+
+                        <button
+                            class="btn jump"
+                            data-tab="create"
+                        >
+                            Create Course
+                        </button>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="icon">
+                            📊
+                        </div>
+
+                        <h3>
+                            Grade Work
+                        </h3>
+
+                        <p>
+                            Review and grade student
+                            submissions.
+                        </p>
+
+                        <button
+                            class="btn jump"
+                            data-tab="grading"
+                        >
+                            Open Grading
+                        </button>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CREATE COURSE -->
+
+        <section
+            id="create"
+            class="dash-section"
+        >
+
+            <div class="panel narrow">
+
+                <h2>
+                    Create New Course
+                </h2>
+
+
+                <form id="course-form">
+
+                    <label>
+                        Course Title
+                    </label>
+
+                    <input
+                        id="new-title"
+                        required
+                        placeholder="e.g. Java Programming"
+                    >
+
+
+                    <label>
+                        Course Description
+                    </label>
+
+                    <textarea
+                        id="new-desc"
+                        rows="5"
+                        required
+                        placeholder="Describe the course..."
+                    ></textarea>
+
+
+                    <button
+                        class="btn"
+                        type="submit"
+                    >
+                        Publish Course
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- MANAGE COURSES -->
+
+        <section
+            id="manage"
+            class="dash-section"
+        >
+
+            <div class="panel">
+
+                <h2>
+                    Available Courses
+                </h2>
+
+                <div
+                    id="admin-course-list"
+                    class="dashboard-grid"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GRADING -->
+
+        <section
+            id="grading"
+            class="dash-section"
+        >
+
+            <div class="panel">
+
+                <h2>
+                    Submitted Assignments
+                </h2>
+
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Student
+                                </th>
+
+                                <th>
+                                    Assignment
+                                </th>
+
+                                <th>
+                                    Submission
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="grading-body"
+                        ></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

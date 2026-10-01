@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>EduPortal - Student Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<div class="dashboard-shell">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a class="side-logo" href="index.html">
+
+            🎓
+
+            <span>
+                EduPortal
+            </span>
+
+        </a>
+
+
+        <!-- USER -->
+
+        <div class="profile">
+
+            <div class="avatar" id="avatar">
+                JD
+            </div>
+
+            <div>
+
+                <b id="side-name">
+                    Jane Doe
+                </b>
+
+                <small id="side-role">
+                    Student
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="side-nav">
+
+            <button
+                class="side-btn active"
+                data-tab="courses"
+            >
+                📚
+                <span>
+                    Courses
+                </span>
+            </button>
+
+
+            <button
+                class="side-btn"
+                data-tab="assignments"
+            >
+                📝
+                <span>
+                    Assignments
+                </span>
+            </button>
+
+
+            <button
+                class="side-btn"
+                data-tab="forum"
+            >
+                💬
+                <span>
+                    Discussion Forum
+                </span>
+            </button>
+
+
+            <button
+                class="side-btn"
+                data-tab="certificates"
+            >
+                📜
+                <span>
+                    Certificates
+                </span>
+            </button>
+
+        </nav>
+
+
+        <a class="side-home"
+           href="index.html">
+
+            ← Back to Home
+
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+
+        <!-- HEADER -->
+
+        <header class="dash-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    STUDENT PORTAL
+                </span>
+
+                <h1 id="page-title">
+                    Available Courses
+                </h1>
+
+                <p id="date"></p>
+
+            </div>
+
+
+            <div>
+
+                <span class="welcome">
+
+                    Welcome,
+
+                    <b id="header-name">
+                        Jane Doe
+                    </b>
+
+                </span>
+
+                <button
+                    id="logout-btn"
+                    class="btn btn-small"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- COURSES -->
+
+        <section
+            id="courses"
+            class="dash-section active"
+        >
+
+            <div class="stats">
+
+                <div>
+
+                    <b id="course-count">
+                        0
+                    </b>
+
+                    <span>
+                        Courses
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <b id="assignment-count">
+                        0
+                    </b>
+
+                    <span>
+                        Assignments
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <b id="completed-count">
+                        0%
+                    </b>
+
+                    <span>
+                        Progress
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="course-grid"
+                class="dashboard-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- ASSIGNMENTS -->
+
+        <section
+            id="assignments"
+            class="dash-section"
+        >
+
+            <div
+                id="assignment-grid"
+                class="dashboard-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- FORUM -->
+
+        <section
+            id="forum"
+            class="dash-section"
+        >
+
+            <div class="panel">
+
+                <h2>
+                    Post a Question
+                </h2>
+
+                <form id="forum-form">
+
+                    <input
+                        id="forum-title"
+                        placeholder="Topic / Question Title"
+                        required
+                    >
+
+                    <textarea
+                        id="forum-body"
+                        rows="4"
+                        placeholder="Describe your question..."
+                        required
+                    ></textarea>
+
+                    <button
+                        class="btn"
+                        type="submit"
+                    >
+                        Post to Forum
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h2>
+                    Recent Discussions
+                </h2>
+
+                <div id="forum-list"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CERTIFICATES -->
+
+        <section
+            id="certificates"
+            class="dash-section"
+        >
+
+            <div
+                class="certificate-area"
+                id="certificate-list"
+            ></div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

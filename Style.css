@@ -1,355 +1,1026 @@
-/* Basic Global Styles */
+* {
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f9;
-  color: #333;
-  display: flex;
-  min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
 }
 
-/* Sidebar Navigation */
-aside {
-  width: 220px;
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.brand {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
-.nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    height: 72px;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    gap: 40px;
+    border-bottom: 1px solid #e8ebf2;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-.nav-links li {
-  margin-bottom: 10px;
+.logo,
+.side-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1e63ee;
 }
 
-.nav-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #444;
-  color: white;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  border-radius: 4px;
+.site-header nav {
+    display: flex;
+    gap: 26px;
+    flex: 1;
 }
 
-.nav-btn:hover, 
-.nav-btn.active {
-  background-color: #007bff;
+.site-header nav a {
+    color: #667085;
+    font-weight: 600;
 }
 
-.instructor-only {
-  display: none;
+.site-header nav a.active,
+.site-header nav a:hover {
+    color: #1e63ee;
 }
 
-.user-profile {
-  margin-top: auto;
-  padding-top: 15px;
-  border-top: 1px solid #555;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.header-actions {
+    display: flex;
+    gap: 10px;
 }
 
-.avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #007bff;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
 
-.user-name {
-  font-weight: bold;
-  font-size: 14px;
-}
+/* =========================
+   BUTTON
+========================= */
 
-.user-role-text {
-  font-size: 12px;
-  color: #ccc;
-}
-
-.role-toggle {
-  margin-top: 15px;
-  display: flex;
-  gap: 5px;
-}
-
-.role-btn {
-  flex: 1;
-  padding: 5px;
-  background-color: #555;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.role-btn.active {
-  background-color: #007bff;
-}
-
-/* Main Area */
-main {
-  flex: 1;
-  padding: 20px;
-}
-
-.top-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.current-date {
-  font-size: 12px;
-  color: #666;
-}
-
-.auth-buttons {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.user-welcome {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.view-section {
-  display: none;
-}
-
-.view-section.active {
-  display: block;
-}
-
-/* Cards & Layout */
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 5px;
-  width: 280px;
-  margin-bottom: 15px;
-}
-
-.card-margin {
-  margin-bottom: 20px;
-}
-
-.card h3 {
-  margin-top: 0;
-}
-
-/* Progress Bar */
-.progress-container {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  margin-bottom: 5px;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 10px;
-  background-color: #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.progress-fill {
-  height: 100%;
-  background-color: #28a745;
-  width: 0%;
-}
-
-/* Buttons & Inputs */
 .btn {
-  padding: 8px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+    display: inline-block;
+    border: 0;
+    background: #1e63ee;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #0056b3;
+    background: #1552ce;
 }
 
 .btn-outline {
-  background-color: transparent;
-  color: #007bff;
-  border: 1px solid #007bff;
+    background: white;
+    color: #1e63ee;
+    border: 1px solid #1e63ee;
 }
 
-.btn-outline:hover {
-  background-color: #007bff;
-  color: white;
+.btn-light {
+    background: white;
+    color: #1e63ee;
 }
 
-.btn-secondary {
-  background-color: #6c757d;
+.btn-small {
+    padding: 8px 12px;
+    font-size: 13px;
 }
 
-.btn-cert {
-  background-color: #ffc107;
-  color: black;
+.btn-muted {
+    background: #667085;
 }
 
-.btn-sm {
-  padding: 4px 8px;
-  font-size: 12px;
+.full {
+    width: 100%;
+    margin-top: 10px;
 }
 
-.btn-left {
-  align-self: flex-start;
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 510px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 70px 8%;
+
+    background:
+        linear-gradient(
+            115deg,
+            #eaf2ff,
+            #f8fbff
+        );
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.hero-content {
+    max-width: 700px;
 }
 
-input, textarea, select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  width: 100%;
-  box-sizing: border-box;
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    font-weight: 800;
+    color: #1e63ee;
 }
 
-/* Forum */
-.forum-list {
-  margin-top: 10px;
+.hero h1 {
+    font-size: 54px;
+    line-height: 1.08;
+    margin: 14px 0;
 }
+
+.hero h1 span {
+    color: #1e63ee;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #667085;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 70px 8%;
+}
+
+.section.alt {
+    background: white;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin: 8px 0;
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.feature-grid.two {
+    grid-template-columns:
+        repeat(2, 1fr);
+}
+
+.feature-card,
+.panel,
+.course-card,
+.assignment-card {
+
+    background: white;
+
+    border: 1px solid #e6eaf0;
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(30, 40, 70, 0.04);
+}
+
+.feature-card .icon {
+    font-size: 30px;
+}
+
+.feature-card h3 {
+    margin: 16px 0 8px;
+}
+
+.feature-card p {
+    color: #667085;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 28px;
+    color: #667085;
+}
+
+
+/* =========================
+   AUTH
+========================= */
+
+.auth-page {
+    background: #f5f7fb;
+    min-height: 100vh;
+}
+
+.auth-wrapper {
+    min-height:
+        calc(100vh - 72px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+}
+
+.auth-card {
+    background: white;
+
+    width: 430px;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 50px
+        rgba(30, 40, 70, 0.1);
+}
+
+.auth-brand {
+    text-align: center;
+    font-size: 42px;
+}
+
+.auth-card h1 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.auth-card > p {
+    text-align: center;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.auth-card label {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.auth-card input,
+.auth-card select {
+
+    padding: 12px;
+
+    border:
+        1px solid #d9dee8;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+.auth-card input:focus {
+    border-color: #1e63ee;
+}
+
+.auth-link {
+    margin-top: 20px;
+}
+
+.auth-link a {
+    color: #1e63ee;
+    font-weight: 700;
+}
+
+.demo-box {
+    background: #eef5ff;
+
+    border-radius: 9px;
+
+    padding: 12px;
+
+    font-size: 12px;
+
+    color: #52607a;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 250px;
+
+    background: #101828;
+
+    color: white;
+
+    padding: 24px 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    position: fixed;
+
+    inset: 0 auto 0 0;
+}
+
+.side-logo {
+    padding: 8px 12px;
+    color: white;
+}
+
+.side-logo span {
+    margin-left: 4px;
+}
+
+
+/* PROFILE */
+
+.profile {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+
+    margin:
+        35px 8px 25px;
+
+    padding-bottom: 20px;
+
+    border-bottom:
+        1px solid #344054;
+}
+
+.profile b,
+.profile small {
+    display: block;
+}
+
+.profile small {
+    color: #98a2b3;
+    margin-top: 4px;
+}
+
+.avatar {
+
+    width: 42px;
+
+    height: 42px;
+
+    background: #1e63ee;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+
+/* SIDEBAR NAV */
+
+.side-nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.side-btn {
+
+    border: 0;
+
+    background: transparent;
+
+    color: #c8ced8;
+
+    text-align: left;
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.side-btn:hover,
+.side-btn.active {
+
+    background: #1e63ee;
+
+    color: white;
+}
+
+.side-home {
+    margin-top: auto;
+
+    color: #98a2b3;
+
+    padding: 13px;
+}
+
+
+/* MAIN */
+
+.dashboard-main {
+
+    margin-left: 250px;
+
+    flex: 1;
+
+    padding:
+        35px 5%;
+}
+
+
+/* HEADER */
+
+.dash-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid #e5e9f0;
+
+    padding-bottom: 22px;
+
+    margin-bottom: 28px;
+}
+
+.dash-header h1 {
+    margin: 6px 0;
+}
+
+.dash-header p,
+.dash-header #date {
+    color: #667085;
+}
+
+.welcome {
+    margin-right: 12px;
+    color: #667085;
+}
+
+
+/* SECTIONS */
+
+.dash-section {
+    display: none;
+}
+
+.dash-section.active {
+    display: block;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.stats > div {
+
+    background: white;
+
+    border:
+        1px solid #e6eaf0;
+
+    border-radius: 12px;
+
+    padding: 22px;
+}
+
+.stats b {
+
+    display: block;
+
+    font-size: 28px;
+
+    color: #1e63ee;
+}
+
+.stats span {
+
+    color: #667085;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   COURSE CARDS
+========================= */
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(270px, 1fr)
+        );
+
+    gap: 20px;
+}
+
+.course-card h3,
+.assignment-card h3 {
+
+    margin:
+        15px 0 8px;
+}
+
+.course-card p {
+
+    color: #667085;
+
+    line-height: 1.6;
+
+    min-height: 48px;
+}
+
+.course-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.course-icon {
+    font-size: 27px;
+}
+
+.pill {
+
+    font-size: 11px;
+
+    background: #eef2f7;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    color: #52607a;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    color: #667085;
+
+    margin-top: 15px;
+}
+
+.progress {
+
+    height: 9px;
+
+    background: #e7eaf0;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    margin:
+        7px 0 14px;
+}
+
+.progress i {
+
+    display: block;
+
+    height: 100%;
+
+    background: #1e63ee;
+}
+
+
+/* CERTIFICATE BUTTON */
+
+.certificate-btn {
+    background: #f2a900;
+}
+
+
+/* =========================
+   ASSIGNMENTS
+========================= */
+
+.assignment-card textarea {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border:
+        1px solid #d9dee8;
+
+    border-radius: 8px;
+
+    margin:
+        10px 0;
+}
+
+
+/* =========================
+   BADGES
+========================= */
+
+.badge {
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    padding: 5px 8px;
+
+    border-radius: 20px;
+}
+
+.badge.success {
+
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+.badge.pending {
+
+    background: #fff4cc;
+
+    color: #8a6500;
+}
+
+
+/* =========================
+   FORUM
+========================= */
 
 .forum-post {
-  border-bottom: 1px solid #eee;
-  padding: 10px 0;
+
+    padding: 17px 0;
+
+    border-bottom:
+        1px solid #e9edf3;
 }
 
-.forum-meta {
-  font-size: 12px;
-  color: #777;
+.forum-post h3 {
+
+    margin:
+        0 0 7px;
 }
 
-/* Tables */
-.table-container {
-  overflow-x: auto;
+.forum-post p {
+
+    color: #667085;
+}
+
+.forum-post small {
+
+    color: #98a2b3;
+}
+
+
+/* =========================
+   CERTIFICATE
+========================= */
+
+.certificate-area {
+
+    display: grid;
+
+    gap: 18px;
+}
+
+.certificate {
+
+    background:
+        linear-gradient(
+            110deg,
+            #fff,
+            #f7fbff
+        );
+
+    border:
+        2px solid #b9d1ff;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.certificate > span {
+    font-size: 40px;
+}
+
+.certificate small {
+
+    color: #1e63ee;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.certificate h2 {
+    margin: 7px 0;
+}
+
+.certificate p {
+    color: #667085;
+}
+
+
+/* EMPTY */
+
+.empty {
+
+    text-align: center;
+
+    padding: 70px;
+
+    background: white;
+
+    border-radius: 14px;
+}
+
+.empty div {
+    font-size: 45px;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrap {
+    overflow: auto;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
+
+    width: 100%;
+
+    border-collapse: collapse;
 }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
+th,
+td {
+
+    text-align: left;
+
+    padding: 13px;
+
+    border-bottom:
+        1px solid #e9edf3;
+
+    font-size: 13px;
 }
 
 th {
-  background-color: #eee;
+    background: #f8fafc;
 }
 
 code {
-  background: #eee;
-  padding: 2px 4px;
-  border-radius: 3px;
+
+    background: #f1f3f7;
+
+    padding: 4px;
+
+    border-radius: 5px;
 }
 
-/* Badges */
-.badge {
-  padding: 3px 6px;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: bold;
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    background: #101828;
+
+    color: white;
+
+    padding: 13px 18px;
+
+    border-radius: 9px;
+
+    transform:
+        translateY(100px);
+
+    opacity: 0;
+
+    transition: .25s;
+
+    z-index: 50;
 }
 
-.badge-success {
-  background-color: #d4edda;
-  color: #155724;
+.toast.show {
+
+    transform:
+        translateY(0);
+
+    opacity: 1;
 }
 
-.badge-pending {
-  background-color: #fff3cd;
-  color: #856404;
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .feature-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .dashboard-main {
+        margin-left: 210px;
+    }
 }
 
-/* Modals */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-}
 
-.modal-content {
-  background: white;
-  padding: 25px;
-  border-radius: 5px;
-  text-align: center;
-}
+@media (max-width: 650px) {
 
-.auth-modal-content {
-  width: 300px;
-  text-align: left;
-}
+    .site-header {
+        padding: 0 18px;
+    }
 
-.cert-frame {
-  border: 2px dashed #007bff;
-  padding: 20px;
-  margin: 15px 0;
-}
+    .site-header nav {
+        display: none;
+    }
 
-.cert-subtext {
-  font-size: 12px;
-  color: #666;
-}
+    .hero h1 {
+        font-size: 38px;
+    }
 
-.cert-name {
-  color: #007bff;
-  margin: 5px 0;
-}
+    .section {
+        padding: 45px 20px;
+    }
 
-.cert-course {
-  margin-top: 5px;
+    .feature-grid,
+    .feature-grid.two {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+
+        position: relative;
+
+        width: 100%;
+
+        min-height: auto;
+    }
+
+    .dashboard-shell {
+        display: block;
+    }
+
+    .dashboard-main {
+        margin: 0;
+
+        padding: 20px;
+    }
+
+    .side-nav {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .side-home {
+        margin-top: 15px;
+    }
+
+    .dash-header {
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        display: none;
+    }
+
+    .certificate {
+        flex-wrap: wrap;
+    }
+
 }

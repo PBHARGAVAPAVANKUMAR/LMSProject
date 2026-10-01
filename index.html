@@ -1,152 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduPortal - Learning Management System</title>
-  <link rel="stylesheet" href="Style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduPortal - Learning Management System</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Sidebar Navigation -->
-  <aside>
-    <div class="brand">🎓 EduPortal</div>
-    
-    <ul class="nav-links">
-      <li><button class="nav-btn active" onclick="switchTab('courses', this)">📚 Courses</button></li>
-      <li><button class="nav-btn" onclick="switchTab('assignments', this)">📝 Assignments</button></li>
-      <li><button class="nav-btn" onclick="switchTab('forum', this)">💬 Discussion Forum</button></li>
-      <li><button class="nav-btn instructor-only" id="instructor-tab-btn" onclick="switchTab('instructor', this)">🛠️ Course Creator</button></li>
-      <li><button class="nav-btn instructor-only" id="grading-tab-btn" onclick="switchTab('grading', this)">📊 Grading Tools</button></li>
-    </ul>
+    <!-- HEADER -->
+    <header class="site-header">
 
-    <div class="user-profile">
-      <div class="avatar" id="avatar-icon">JD</div>
-      <div>
-        <div id="user-name" class="user-name">Jane Doe</div>
-        <div id="user-role-text" class="user-role-text">Student</div>
-      </div>
-    </div>
+        <a class="logo" href="index.html">
+            🎓 EduPortal
+        </a>
 
-    <!-- Role Switcher -->
-    <div class="role-toggle">
-      <button class="role-btn active" id="btn-role-student" onclick="setRole('Student')">Student</button>
-      <button class="role-btn" id="btn-role-instructor" onclick="setRole('Instructor')">Instructor</button>
-    </div>
-  </aside>
+        <nav>
+            <a class="active" href="index.html">Home</a>
+            <a href="login.html">Courses</a>
+            <a href="user.html">Student Dashboard</a>
+            <a href="admin.html">Instructor</a>
+        </nav>
 
-  <!-- Main View Area -->
-  <main>
-    <header class="top-header">
-      <div>
-        <h1 id="page-title">Available Courses</h1>
-        <span id="current-date" class="current-date"></span>
-      </div>
+        <div class="header-actions">
+            <a class="btn btn-outline" href="login.html">Login</a>
+            <a class="btn" href="register.html">Register</a>
+        </div>
 
-      <!-- Top Right Auth Controls -->
-      <div class="auth-buttons" id="auth-container">
-        <button class="btn btn-outline" onclick="openAuthModal('login')">Login</button>
-        <button class="btn" onclick="openAuthModal('register')">Register</button>
-      </div>
     </header>
 
-    <!-- COURSES VIEW -->
-    <section id="courses" class="view-section active">
-      <div class="grid" id="courses-grid"></div>
-    </section>
 
-    <!-- ASSIGNMENTS VIEW -->
-    <section id="assignments" class="view-section">
-      <div class="grid" id="assignments-grid"></div>
-    </section>
+    <!-- HERO SECTION -->
+    <section class="hero">
 
-    <!-- FORUM VIEW -->
-    <section id="forum" class="view-section">
-      <div class="card card-margin">
-        <h3>Post a Question</h3>
-        <form id="forum-form" onsubmit="addForumPost(event)">
-          <input type="text" id="forum-title" placeholder="Topic / Question Title" required>
-          <textarea id="forum-body" rows="3" placeholder="Describe your question..." required></textarea>
-          <button type="submit" class="btn btn-left">Post to Forum</button>
-        </form>
-      </div>
+        <div class="hero-content">
 
-      <div class="card">
-        <h3>Recent Discussions</h3>
-        <div id="forum-list" class="forum-list"></div>
-      </div>
-    </section>
+            <span class="eyebrow">
+                LEARN • PRACTICE • GROW
+            </span>
 
-    <!-- INSTRUCTOR: COURSE CREATOR VIEW -->
-    <section id="instructor" class="view-section">
-      <div class="card">
-        <h3>Create New Course</h3>
-        <form onsubmit="createCourse(event)">
-          <input type="text" id="new-course-title" placeholder="Course Title" required>
-          <textarea id="new-course-desc" rows="3" placeholder="Course Description" required></textarea>
-          <button type="submit" class="btn btn-left">Publish Course</button>
-        </form>
-      </div>
-    </section>
+            <h1>
+                Learn new skills with
+                <span>EduPortal</span>
+            </h1>
 
-    <!-- INSTRUCTOR: GRADING TOOLS VIEW -->
-    <section id="grading" class="view-section">
-      <div class="card">
-        <h3>Submitted Assignments</h3>
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Student</th>
-                <th>Assignment</th>
-                <th>Submission</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody id="grading-table-body"></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  </main>
+            <p>
+                A simple learning management system for students
+                and instructors. Explore courses, submit assignments,
+                discuss topics and earn certificates.
+            </p>
 
-  <!-- LOGIN / REGISTER MODAL -->
-  <div class="modal" id="auth-modal">
-    <div class="modal-content auth-modal-content">
-      <h2 id="auth-modal-title">Login</h2>
-      <form id="auth-form" onsubmit="handleAuth(event)">
-        <input type="email" id="auth-email" placeholder="Email Address" required>
-        <input type="password" id="auth-password" placeholder="Password" required>
-        
-        <div id="register-fields" style="display: none;">
-          <input type="text" id="auth-name" placeholder="Full Name">
-          <select id="auth-role">
-            <option value="Student">Student</option>
-            <option value="Instructor">Instructor</option>
-          </select>
+            <div class="hero-buttons">
+
+                <a class="btn" href="login.html">
+                    Explore Courses
+                </a>
+
+                <a class="btn btn-light" href="register.html">
+                    Create Account
+                </a>
+
+            </div>
+
         </div>
 
-        <button type="submit" class="btn" id="auth-submit-btn">Submit</button>
-        <button type="button" class="btn btn-secondary" onclick="closeAuthModal()">Cancel</button>
-      </form>
-    </div>
-  </div>
+    </section>
 
-  <!-- CERTIFICATE MODAL -->
-  <div class="modal" id="cert-modal">
-    <div class="modal-content">
-      <h2>🎉 Certificate of Completion</h2>
-      <div class="cert-frame">
-        <p class="cert-subtext">This certifies that</p>
-        <h3 id="cert-student-name" class="cert-name">Jane Doe</h3>
-        <p class="cert-subtext">has successfully completed the course</p>
-        <h4 id="cert-course-name" class="cert-course">Web Development Fundamentals</h4>
-      </div>
-      <button class="btn" onclick="closeModal()">Close & Download</button>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
+    <!-- MODULES -->
+    <section class="section">
+
+        <div class="section-title">
+
+            <span class="eyebrow">
+                WHAT WE OFFER
+            </span>
+
+            <h2>
+                Learning Modules
+            </h2>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <article class="feature-card">
+
+                <div class="icon">
+                    📚
+                </div>
+
+                <h3>
+                    Courses
+                </h3>
+
+                <p>
+                    Browse courses, enroll and track
+                    your learning progress.
+                </p>
+
+            </article>
+
+
+            <article class="feature-card">
+
+                <div class="icon">
+                    📝
+                </div>
+
+                <h3>
+                    Assignments
+                </h3>
+
+                <p>
+                    Submit your work and keep track
+                    of pending and graded assignments.
+                </p>
+
+            </article>
+
+
+            <article class="feature-card">
+
+                <div class="icon">
+                    💬
+                </div>
+
+                <h3>
+                    Discussion Forum
+                </h3>
+
+                <p>
+                    Ask questions and share knowledge
+                    with other learners.
+                </p>
+
+            </article>
+
+
+            <article class="feature-card">
+
+                <div class="icon">
+                    📜
+                </div>
+
+                <h3>
+                    Certificates
+                </h3>
+
+                <p>
+                    View your certificate when a course
+                    is successfully completed.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- INSTRUCTOR -->
+    <section class="section alt">
+
+        <div class="section-title">
+
+            <span class="eyebrow">
+                FOR INSTRUCTORS
+            </span>
+
+            <h2>
+                Manage your classroom
+            </h2>
+
+        </div>
+
+
+        <div class="feature-grid two">
+
+            <article class="feature-card">
+
+                <div class="icon">
+                    ➕
+                </div>
+
+                <h3>
+                    Course Creator
+                </h3>
+
+                <p>
+                    Create and publish new courses
+                    from the instructor dashboard.
+                </p>
+
+            </article>
+
+
+            <article class="feature-card">
+
+                <div class="icon">
+                    📊
+                </div>
+
+                <h3>
+                    Grading Tools
+                </h3>
+
+                <p>
+                    Review submissions and mark
+                    assignments as graded.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 EduPortal • Learning Management System
+
+    </footer>
+
 </body>
+
 </html>
